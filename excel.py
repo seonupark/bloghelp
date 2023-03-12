@@ -6,4 +6,4 @@ ws = aa['3단']
 for row in ws.rows:
     for cell in row:
         print(cell.value)
-
+#git 수정
