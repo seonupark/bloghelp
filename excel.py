@@ -1,16 +1,22 @@
 from openpyxl import load_workbook
 
-aa = load_workbook(filename='practice.xlsx')
-ws = aa['3단']
-
-ws['B1']=4
+wb = load_workbook(filename='function.xlsx')
+ws = wb['Sheet1']
 
 for j in range(2,6):
     for i in range(1,11):
-        ws.cell(column=j,row=i, value=(j+2)*i)
+        ws.cell(column=j,row=i, value=(ws.cell(column=j-1,row=i).value+3))
 
-aa.save('practice.xlsx')
-aa.close()
+wb.save('function.xlsx')
+wb.close()
+
+
+
+
+
+
+
+
 
 # for row in ws.rows:
 #     for cell in row:
